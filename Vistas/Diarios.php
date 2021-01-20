@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel="icon" href="../Imagenes/logo.ico"/>
+        <title>Diarios De Trabajo</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
+    <meta charset="UTF-8">
+    <body>
+        <!--menu lateral-->
+        <div class="menulateral">
+            <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+                <center><img src="../Imagenes/logo.ico" width="100" heigth="100"></center>
+            </a>
+            <a href="../Vistas/Dashboard.php" class="list-group-item list-group-item-action">Menu Principal</a>
+            <a href="../Vistas/Observaciones.php" class="list-group-item list-group-item-action">Observaciones Permanentes</a>
+            <a href="../Vistas/Diarios.php" class="list-group-item list-group-item-action">Diarios De Trabajo</a>
+            <a href="../Vistas/Datos.php" class="list-group-item list-group-item-action">Mis Datos</a>
+            <a href="#" class="btn btn-danger">Cerrar Sesion </a>
+            </div>
+        </div>
+        <!-- menu lateral-->
+        <!--datos observaciones-->
+        <div class="crud">
+            <form>
+            <table class="table">
+                <h6 class="text-center"> Eliminar Diarios </h6>
+                    <thead>
+                        <tr>
+                        
+                        <?php         
+                        include '../Conexionbd/Conexion.php';
+                        $query1=mysqli_query($conexion,"SHOW COLUMNS FROM diario FROM preescolar");
+                        while($fr1=mysqli_fetch_row($query1)){
+                            echo "<th> $fr1[0]  </th>";
+                        }
+                        ?>
+                        <th>Seleccionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <?php
+                         $query2=mysqli_query($conexion,"SELECT *FROM diario");
+                         while($fr2=mysqli_fetch_array($query2)){    
+                        echo "<tr>
+                              <td>  $fr2[id_diario] </td>
+                              <td>  $fr2[alumno] </td>
+                              <td>  $fr2[fecha] </td>
+                              <td>  $fr2[descripcion] </td>
+                              <td><input type='checkbox' name='eliminar[]' value='$fr2[id_diario]'/> </td>
+                             </tr> ";
+                        }
+                        ?>
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th> <input type="submit" name="borrar" value="Eliminar" class="btn btn-danger"/></th>
+                        </tr>
+                    </tfoot>
+                    </table>
+            </form>
+        </div>
+     <!--datos observaciones-->
+     <!--modificar--> 
+     <div class="modificar">
+         <h6 class="text-center"> Modificar Diarios </h6>
+                        
+                 <form>
+                <div class="form-group">
+                    <label for="seleccion">Selecciona ID de diario</label>
+                   <select>
+                        <?php
+                        $query3=mysqli_query($conexion,"SELECT *FROM diario");
+                        while($fr3=mysqli_fetch_row($query3)){
+                            echo "
+                            <option>$fr3[0]</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nomalum">Editar Nombre Alumno</label>
+                    <input type="text" class="form-control" name="alumno" placeholder="Alumno">
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Editar Fecha</label>
+                    <input type="text" class="form-control" name="fecha" placeholder="Fecha">
+                </div>
+                <div class="form-group">
+                    <label for="content">Editar Descripcion</label>
+                    <input type="text" class="form-control" name="contenido" placeholder="Descripcion">
+                </div>
+                <input type="submit" class="btn btn-warning" value="Modificar"/>
+                </form>
+    </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
