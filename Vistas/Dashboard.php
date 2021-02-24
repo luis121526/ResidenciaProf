@@ -21,7 +21,13 @@
             </div>
         </div>
         <!-- menu lateral-->
-
+        <div class="nomuser">
+            <?php
+            include '../Conexionbd/Conexion.php';
+            session_start();
+            echo "<h4>Bienvenido  $_SESSION[usuario]</h4>";
+            ?>
+        </div>
     </body>
     <footer>
 

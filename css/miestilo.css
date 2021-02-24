@@ -46,3 +46,10 @@ body{
     margin-top: 70px;
     padding: 20px;
 }
+.nomuser{
+    height: 40px;
+    width: 250px;
+    background-color:lightsteelblue;
+    margin-left: 1100px;
+    margin-top: 10px;
+}
