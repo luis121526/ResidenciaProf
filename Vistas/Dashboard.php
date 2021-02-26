@@ -25,7 +25,7 @@
             <?php
             include '../Conexionbd/Conexion.php';
             session_start();
-            echo "<h4>Bienvenido  $_SESSION[usuario]</h4>";
+            echo "<center><h4> $_SESSION[usuario]</h4></center>";
             ?>
         </div>
     </body>
