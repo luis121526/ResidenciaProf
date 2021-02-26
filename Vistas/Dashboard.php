@@ -17,7 +17,7 @@
             <a href="../Vistas/Observaciones.php" class="list-group-item list-group-item-action">Observaciones Permanentes</a>
             <a href="../Vistas/Observaciones.php" class="list-group-item list-group-item-action">Diarios De Trabajo</a>
             <a href="../Vistas/Datos.php" class="list-group-item list-group-item-action">Mis Datos</a>
-            <a href="#" class="btn btn-danger">Cerrar Sesion </a>
+            <a href="../Conexionbd/CerrarSesion.php" class="btn btn-danger">Cerrar Sesion </a>
             </div>
         </div>
         <!-- menu lateral-->

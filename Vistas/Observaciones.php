@@ -29,7 +29,8 @@
                     <thead>
                         <tr>
                         
-                        <?php         
+                        <?php     
+                        session_start();    
                         include '../Conexionbd/Conexion.php';
                         $query1=mysqli_query($conexion,"SHOW COLUMNS FROM observaciones FROM preescolar");
                         while($fr1=mysqli_fetch_row($query1)){

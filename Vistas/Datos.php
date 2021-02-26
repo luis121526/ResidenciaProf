@@ -33,8 +33,11 @@
                         </thead>
                         <tbody>
                             <?php  
+                            session_start();
+                           // echo "$_SESSION[usuario]";
                             include '../Conexionbd/Conexion.php';
-                            $query1=mysqli_query($conexion,"SELECT *FROM usuarios WHERE id=1");
+                            $nombre=$_SESSION['usuario'];
+                            $query1=mysqli_query($conexion,"SELECT *FROM usuarios WHERE nombreusuario='$nombre'");
                             while($fr=mysqli_fetch_array($query1)){
                                 echo "
                                 <tr>

@@ -30,6 +30,7 @@
                         <tr>
                         
                         <?php         
+                        session_start();
                         include '../Conexionbd/Conexion.php';
                         $query1=mysqli_query($conexion,"SHOW COLUMNS FROM diario FROM preescolar");
                         while($fr1=mysqli_fetch_row($query1)){
