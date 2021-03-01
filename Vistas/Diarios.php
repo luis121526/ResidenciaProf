@@ -5,6 +5,7 @@
     </head>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
     <meta charset="UTF-8">
     <body>
         <!-- logotipo-->
@@ -34,7 +35,7 @@
         <!--datos observaciones-->
         <div class="crud">
             <form>
-            <table class="table">
+            <table id="ejemplo" class="table table-striped table-bordered" styke="width:100%">
                 <h6 class="text-center"> Eliminar Diarios </h6>
                     <thead>
                         <tr>
@@ -106,6 +107,27 @@
                 </form>
     </div>
     </body>
+    
+    <script>
+$(document).ready( function () {
+    $('#ejemplo').DataTable();
+    "languaje":{
+        "lengthMenu":"Mostrar menu registros",
+        "zeroRecords":"Sin resultados",
+        "info":"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "infoEmpty":"Mostrando registros del 0 al 0 de un total de 0 registros",
+        "infoFiltered":"(Filtrando un total de _MAX_ registros",
+        "sSearch":"Buscar",
+        "oPaginate":{
+            "sFirst":"Primero",
+            "sLast":"Ultimo",
+            "sNext":"Siguiente",
+            "sPrevious":"Anterior",
+        },
+        "sProcessing":"Procesando...",
+    }
+} );
+        </script>
     <footer>
 
     </footer>
