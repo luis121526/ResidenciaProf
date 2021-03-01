@@ -96,7 +96,7 @@
 <!--modificar datos de usuario-->
                         <div class="md">
                         <h6 class="text-center">Modificar Mis Datos </h6>
-                            <form>
+                            <form method ="POST" action="../Conexionbd/ModificacionesDocente.php">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="nombre"  placeholder="Nombre">
                                 </div>
@@ -107,7 +107,7 @@
                                     <input type="text" class="form-control" name="apem" placeholder="Apellido Materno">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="fn" placeholder="Fecha Nacimiento">
+                                    <input type="date" class="form-control" name="fn" placeholder="Fecha Nacimiento(AAAA-MM-DD)">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="correo" placeholder="Correo">

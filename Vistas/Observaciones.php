@@ -36,7 +36,7 @@
         <div class="crud">
             <form>
             <table class="table" id="obser">
-                <h6 class="text-center"> Opservaciones Permanentes </h6>
+                <h6 class="text-center"> Observaciones Permanentes </h6>
                     <thead>
                         <tr>
                         
