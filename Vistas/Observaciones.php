@@ -35,7 +35,7 @@
         <!--datos observaciones-->
         <div class="crud">
             <form>
-            <table class="table" id="obser">
+            <table class="table table-striped table-bordered" id="obser">
                 <h6 class="text-center"> Observaciones Permanentes </h6>
                     <thead>
                         <tr>
