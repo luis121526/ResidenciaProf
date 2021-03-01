@@ -16,14 +16,14 @@ if ($nr['id_cargo']==1){//Admin
     session_start();
     $_SESSION['usuario']=$usuario;
     echo "<script>
-    location.href='../Vistas/Dashboard.php';
+    location.href='../Vistas/Observaciones.php';
     </script>";
 }
 if ($nr['id_cargo']==2){//Docente
     session_start();
     $_SESSION['usuario']=$usuario;
     echo "<script>
-    location.href='../Vistas/Observaciones.php';
+    location.href='../Vistas/Dashboard.php';
     </script>";
 }
 else{
