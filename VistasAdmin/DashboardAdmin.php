@@ -23,11 +23,9 @@
         <!--menu lateral-->
         <div class="menulateral">
             <div class="list-group">
-            <a href="../Vistas/Dashboard.php" class="list-group-item list-group-item-action">Menu Principal</a>
-            <a href="../Vistas/Observaciones.php" class="list-group-item list-group-item-action">Observaciones Permanentes</a>
-            <a href="../Vistas/Diarios.php" class="list-group-item list-group-item-action">Diarios De Trabajo</a>
-            <a href="../Vistas/Datos.php" class="list-group-item list-group-item-action">Mis Datos</a>
-            <a href="../Conexionbd/CerrarSesion.php" class="btn btn-danger">Cerrar Sesion </a>
+            <a href="../VistasAdmin/DashboardAdmin.php" class="list-group-item list-group-item-action">Menu Principal</a>
+            <a href="#" class="list-group-item list-group-item-action">Usuarios</a>
+            <a href="#" class="btn btn-danger">Cerrar Sesion </a>
             </div>
         </div>
         <!-- menu lateral-->

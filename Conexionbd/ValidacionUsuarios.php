@@ -16,7 +16,7 @@ if ($nr['id_cargo']==1){//Admin
     session_start();
     $_SESSION['usuario']=$usuario;
     echo "<script>
-    location.href='../Vistas/Observaciones.php';
+    location.href='../VistasAdmin/DashboardAdmin.php';
     </script>";
 }
 if ($nr['id_cargo']==2){//Docente

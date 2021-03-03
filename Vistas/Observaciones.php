@@ -61,6 +61,7 @@
                               <td>  $fr2[alumno] </td>
                               <td>  $fr2[fecha] </td>
                               <td>  $fr2[descripcion] </td>
+                              <td> $fr2[archivo] </td>
                               <td><input type='checkbox' name='eliminar[]' value='$fr2[id_observacion]'/> </td>
                              </tr> ";
                         }
