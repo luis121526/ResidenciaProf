@@ -19,6 +19,7 @@
             include '../Conexionbd/Conexion.php';
             session_start();
             echo "<center><h4> $_SESSION[usuario]</h4></center>";
+            $nombre=$_SESSION['usuario'];
             ?>
         </div>
         </div>
@@ -49,20 +50,20 @@
                             echo "<th> $fr1[0]  </th>";
                         }
                         ?>
-                        <th>Seleccionar</th>
                         </tr>
                     </thead>
                     <tbody>
                          <?php
-                         $query2=mysqli_query($conexion,"SELECT *FROM observaciones");
+                         $query2=mysqli_query($conexion,"SELECT id_observacion,alumno,fecha,descripcion,archivo,id_usuario from observaciones inner join usuarios on observaciones.id_usuario=usuarios.id where nombreusuario='$nombre'");
                          while($fr2=mysqli_fetch_array($query2)){    
                         echo "<tr>
                               <td>  $fr2[id_observacion] </td>
                               <td>  $fr2[alumno] </td>
                               <td>  $fr2[fecha] </td>
                               <td>  $fr2[descripcion] </td>
-                              <td> $fr2[archivo] </td>
-                              <td><input type='checkbox' name='eliminar[]' value='$fr2[id_observacion]'/> </td>
+                              <td>  $fr2[archivo] </td>
+                              <td> $fr2[id_usuario] </td>
+
                              </tr> ";
                         }
                         ?>
@@ -70,7 +71,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th> <input type="submit" name="borrar" value="Eliminar" class="btn btn-danger"/></th>
+                          <!--  <th> <input type="submit" name="borrar" value="Eliminar" class="btn btn-danger"/></th>-->
                         </tr>
                     </tfoot>
                     </table>
