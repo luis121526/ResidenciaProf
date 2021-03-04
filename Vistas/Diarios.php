@@ -20,6 +20,7 @@
             include '../Conexionbd/Conexion.php';
             session_start();
             echo "<center><h4> $_SESSION[usuario]</h4></center>";
+            $nombre=$_SESSION['usuario'];
             ?>
         </div>
         </div>
@@ -46,23 +47,25 @@
                         <?php         
                         include '../Conexionbd/Conexion.php';
                         $query1=mysqli_query($conexion,"SHOW COLUMNS FROM diario FROM preescolar");
+                        
                         while($fr1=mysqli_fetch_row($query1)){
                             echo "<th> $fr1[0]  </th>";
                         }
                         ?>
-                        <th>Seleccionar</th>
                         </tr>
                     </thead>
                     <tbody>
                          <?php
-                         $query2=mysqli_query($conexion,"SELECT *FROM diario");
+                        // $query2=mysqli_query($conexion,"SELECT *FROM diario");
+                         $query2=mysqli_query($conexion,"SELECT id_diario,alumno,fecha,descripcion,archivo,id_usuario from diario inner join usuarios on diario.id_usuario=usuarios.id where nombreusuario='$nombre'");
                          while($fr2=mysqli_fetch_array($query2)){    
                         echo "<tr>
                               <td>  $fr2[id_diario] </td>
                               <td>  $fr2[alumno] </td>
                               <td>  $fr2[fecha] </td>
                               <td>  $fr2[descripcion] </td>
-                              <td><input type='checkbox' name='eliminar[]' value='$fr2[id_diario]'/> </td>
+                              <td>  $fr2[archivo] </td>
+                              <td> $fr2[id_usuario]</td>
                              </tr> ";
                         }
                         ?>
@@ -70,7 +73,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th> <input type="submit" name="borrar" value="Eliminar" class="btn btn-danger"/></th>
+                            <!--<th> <input type="submit" name="borrar" value="Eliminar" class="btn btn-danger"/></th>-->
                         </tr>
                     </tfoot>
                     </table>
